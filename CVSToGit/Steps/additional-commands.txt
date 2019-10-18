@@ -1,0 +1,10 @@
+python cvs2svn-2.4.0/cvs2git --blobfile=cvs2svn-tmp/git-blob.dat --dumpfile=cvs2svn-tmp/git-dump.dat "--username=ymurshed" "C:\test\SampleProject"
+
+
+python cvs2svn-2.4.0/cvs2git --trunk-only --blobfile=cvs2svn-tmp/git-blob.dat --dumpfile=cvs2svn-tmp/git-dump.dat "--username=ymurshed" "C:\test\SampleProject"
+
+python cvs2svn-2.4.0/cvs2git --exclude="feature|dev" --blobfile=cvs2svn-tmp/git-blob.dat --dumpfile=cvs2svn-tmp/git-dump.dat "--username=ymurshed" "C:\test\SampleProject"
+
+
+cat "E:\CVSMigration\cvs2svn-tmp\git-blob.dat" "E:\CVSMigration\cvs2svn-tmp\git-dump.dat" | git fast-import
+git gc --prune=now

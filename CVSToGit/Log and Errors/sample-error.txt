@@ -1,0 +1,300 @@
+ò       Add New CBU button should be centered on page (as it is a central part
+of the pageÆs functionality)
+ò       There should be more space between button and CBU Import widget, so
+clear to user that the Add New CBU button is not part of CBU Import.
+
+
+l]
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Committed By Anurag Upadhyay On 10/09/2012
+ [ bug no: 11636
+ 1: a user should not have to specify a reason for change if
+they are adding a new value (not changing a value)
+
+2: The field label
+should be more clear, æPlease specify reason for change.Æ
+
+  ]
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Changing the done logic for protocol activation workflow. The logic is : marked
+as done Upon saving æProtocol ActivationÆ form for this study.
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+The clob for the update of the ui_flex_page table .
+In this new config adding the following fields :
+
+1.Are fresh biopsies needed?
+2.If yes, please describe
+3.What criteria are you using for classifying Adverse Events?
+4.Other
+5.Specify other criteria (Under the section 'WithDrawl and Replacement of Partic
+ipants)
+6. Add æFunding ProvidedÆ checkboxes for each sponsor (Financial Support Section
+)
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Comitted By Jyoti Parkash for Bug 27970 - #41401:java.sql.SQLException: CouldnÆt
+ get connection because we are at maximum connection count (200/200) and there a
+re none available.
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+fixed for Bug #27999  After checking æInclude Previously Prepared RecordsÆ filte
+r brings the records which already specimen been created only.
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Committed to revert changes made for 'web services to include æForm NameÆ as an
+input element to identify the form uniquely'.
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Committed for 'web services to include æForm NameÆ as an input element to identi
+fy the form uniquely'.
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Committed for Ongoing List of Bugs/enhancements v11.1 'Only allow deletion of a
+site when status is ôPendingö' Build #855
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Committed for eResearch Ongoing List of Bugs/enhancements v11.1
+"Network Site and Network Users can only be deleted if the status is ôPending" .
+"
+Committed for v11.1.0 Build #854
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Committed for eResearch Ongoing List of Bugs/enhancements v11.1 and REST API rem
+oveNetwork
+"Network Site and Network Users can only be deleted if the status is ôPending" .
+"
+Committed for v11.1.0 Build #854
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Committed for eResearch Ongoing List of Bugs/enhancements v11.1
+"Network Site and Network Users can only be deleted if the status is ôPending" .
+"
+Committed for v11.1.0 Build #852
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Committed for esample enh 'eS-DH-ENH3 û Simplify Preparing Samples from a Storag
+e Kit'.
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Fixed Bug no.á7267
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Fixed Bug no.á7382
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Enh #AD3: Enhancements for July-August 2006:
+In æselect fieldsÆ dropdown indicate which 'Form' or 'Table/Core Look up Table'
+the specific fields belong to.
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Commited for Ticket#36966 GÇô IND/IDE assigned to fk_study = 0
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+#3769 - Ver-8.0.2.3
+==============
+#C9 û Admin Schedule to Not to have æOffline for EditingÆ option/feature.
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+#PS12: In Event Status Details page, include a display of all æAssigned Resource
+sÆ (Role Types only) for that Event and the corresponding time to be spent by th
+e resource. This field will be an edit field that will allow capture of æActual
+Time SpentÆ for each Event Status record (format same as in Event Resources > Ro
+le page) and pre-populate with value entered in Calendar design. Also save the d
+efault values from Event Design when 'Edit Multiple Details' page is saved, alth
+ough we do not display the fields
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Commited for Cost types æProfessional FeeÆ and æTechnical FeeÆ
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Committed for ESP-NetworkSEI Request Change
+If error û syntax, execution error, return 500.
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Committed for getCurrentStudyStatus service request to get the currentÆ status o
+f a Study.
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Committed to revert changes for 'web services to include æForm NameÆ as an input
+ element to identify the form uniquely'.
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Committed for eResearch Ongoing List of Bugs/enhancements v11.1 and REST API rem
+oveNetworkSite: Network Site can only be deleted if the status is ôPending" .
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Committed for eResearch Ongoing List of Bugs/enhancements v11.1 and REST API rem
+oveNetwork: Network Site can only be deleted if the status is ôPending" .
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Committed for 'createUser web service to support intake and save of æmore user d
+etailsÆ fields'.
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+1. Issues 2521,2520
+
+2. Reports - Reports central
+
+3. budget issue at cleveland. if only one section in budget has lineitems, and f
+ringe benefit is added for 'personel' lineitem, in the "Section Research Total "
+ , fringe benefit amount is added by multiplying the fringe benefit for the sele
+cted line item * number of lineitems. for example, if there is only one 'persone
+l' lineitem in the section with value 200, and a 10% fringe benefit is added, th
+en the research total should have 20 added to thetotal. But it adds 60 when ther
+e are 3 lineitems in the section, or 40 when there are 4 lineitems. so it multip
+lies the actaul amount with the number of line items.
+
+4. Michigan form crash. ItÆs the same issue as 2501. But pls. test 2501 again as
+ we have changed the way it was fixed earlier.
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Committed by Kaushik for Bug# 30825 - In Network User Role the Add icon must hav
+e hover over saying ôAdd New Roleö
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Committed for 'Bug 30013 - In Status Details screen of Study network ôStudyö wor
+d appears for two times in heading' by Deepti Rawat
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+#3464 :
+Manage Protocols >> Admin Schedule / Study Setup, associate any one of the
+calendar and clicked on that calendar name for editing the sequence of Events.
+Verify the page æSchedule and CustomizeÆ page, arrow buttons are allowed to
+change the sequence of Events and the event link also allowed to change the
+sequence of that event.
+
+Now move back to Manage Protocols >> Admin Schedule / Study Setup page and
+change that associated calendar status to æACTIVEÆ. Click again that calendar
+name and verify the page æSchedule and CustomizeÆ. Still arrow buttons are
+allowed to change the sequence value of events. But Event link is not allowed
+to change the Sequence.
+
+As per the functionality, if the calendar is having the status ACTIVE/
+DEACTIVATED/ FREEZE, we should not allowed to modify the Sequence of the
+Events.
+
+Please refer æAdd fieldsÆ page in Form library, in that page hide the arrow
+buttons once you changed the form status to Freeze. Use that same way to
+Calendar.
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Cosmetic changes (done while testing #3513-WFM):
+Additional work done ? for æDaysÆ made default for the Visit Window
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Enh #AD3: Enhancements for July-August 2006:
+In æselect fieldsÆ dropdown indicate which 'Form' or 'Table/Core Look up table'
+the specific fields belong to.
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Enhnacement #AD12:
+ In AHQ, where we have 'Select Patient' lookup, Need an option to filter by æStu
+dyÆ in æSelect PatientÆ lookup. Therefore a User can filter by æStudy XYZÆ and g
+et a list of patients on that study. Use the same logic to get æstudy dropdownÆ
+as implemented in first page of create adHoc queries.
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+#C8 û After changing the sequence of events DONE button leads to always Study Se
+tup
+
+Not in the Version 7.3.9.9, changes made after this ver.
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+commited for eS-DH-ENH7 û Applying Parent Data to Child for Additional Fields
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+Committed for 'Bug 30076 - In Edit Study Status Details screen of Study network
+ôStudyö word appears for two times in heading' by Deepti Rawat
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+[Work Item 14774] Printout of widget missing identifiers on page(s) GÇô for Pati
+ent and Non-Patient Related [o]
+
+---------------------------------------------------------------------------
+WARNING: Problem decoding log message:
+---------------------------------------------------------------------------
+This enhancement doesnÆt have any reference now : This is to maintain the dataso
+urces of etools. Earlier it is being handled in backend. - Version 3.1 build101
+
+---------------------------------------------------------------------------
+ERROR: There were warnings converting author names and/or log messages
+to Unicode (see messages above).  Please restart this pass
+with one or more '--encoding' parameters or with
+'--fallback-encoding'.
+
+D:\CVSMigration>

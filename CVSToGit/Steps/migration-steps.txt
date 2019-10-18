@@ -1,0 +1,64 @@
+Step 1 (Setup):
+===================================================
+1. Install python 2.4.
+
+2. Download and install the python package "cvs2git" (cvs2svn-2.5.0) which does the main conversion from CVS to git (Compatible with python 2~2.4).
+
+3. Set up CVS server and client by installing "CVS Suite Studio" (trial version).
+
+4. Install Git Bash/TortoiseGit/SourceTree for doing other git related operations.
+
+ 
+Step 2:
+===================================================
+1. Create a folder in local machine, from where all the migration process will be performed.
+
+2. Keep the cvs2git package inside this migration folder.
+
+3. Get the CVS server path for the repository which need to be migrated.
+
+4. Open the windows cmd tool from migration folder. Prepare the following command and run it from the cmd. 
+
+--(a) Using command line argument
+***********************************************************************************************************************************************************************************
+python cvs2svn-2.5.0/cvs2git --blobfile=cvs2git-tmp/git-blob.dat --dumpfile=cvs2git-tmp/git-dump.dat "--username=ymurshed" "C:\test\SampleProject"
+***********************************************************************************************************************************************************************************
+
+--(b) Using option file
+***********************************************************************************************************************************************************************************
+python cvs2svn-2.5.0/cvs2git --options=cvs2git-example.options
+***********************************************************************************************************************************************************************************
+
+
+Summary of the command:
+--------------------------
+cvs2git will create two .dat files: git-blob.dat and  git-dump.dat under the migration folder where CVS source repository locates under the path C:\ProgramData\March Hare\mycvsrepo   
+
+
+Step 3:
+===================================================
+1. Create a bitbucket repository in remote server.
+
+2. Clone the repo in local machine.
+
+3. Open the GitBash command line tool.
+
+4. Go to the cloned repo from GitBash and execute the following two commands:
+
+***********************************************************************************************************************************************************************************
+cat "E:\CVSMigration\cvs2git-tmp\git-blob.dat" "E:\CVSMigration\cvs2git-tmp\git-dump.dat" | git fast-import
+git gc --prune=now
+***********************************************************************************************************************************************************************************
+
+
+Summary of the command:
+--------------------------
+This will copy the CVS repository contents from the .dat files into the cloned git folder.
+
+
+Step 4
+===================================================
+1. Open the TortoiseGit (or any source control tool) and perform following actions:
+    Git Sync ---> Local Branch <select your required CVS branch that you want to migrate> ---> Push
+
+2. Verify in the bitbucket remote repository to see the CVS branches are appeared with their histories.
