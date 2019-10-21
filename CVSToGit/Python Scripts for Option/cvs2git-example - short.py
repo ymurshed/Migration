@@ -1,4 +1,6 @@
 import os
+import csv
+
 from cvs2svn_lib import config
 from cvs2svn_lib import changeset_database
 from cvs2svn_lib.common import CVSTextDecoder
@@ -38,13 +40,22 @@ from cvs2svn_lib.property_setters import KeywordsPropertySetter
 from cvs2svn_lib.property_setters import MimeMapper
 from cvs2svn_lib.property_setters import SVNBinaryFileKeywordsPropertySetter
 
+#constants
+temp_dir = r'cvs2git-tmp'
+temp_user_name = 'cvs2git'
+git_blob_file = 'git-blob.dat'
+git_dump_file = 'git-dump.dat'
+author_mapping_file = 'author-mapping.txt'
+project_mapping_file = 'project-mapping.txt' 
+
+
 logger.log_level = logger.NORMAL
 
 # The directory to use for temporary files:
-ctx.tmpdir = r'cvs2git-tmp'
+ctx.tmpdir = temp_dir
 
 ctx.revision_collector = ExternalBlobGenerator(
-    blob_filename = os.path.join(ctx.tmpdir, 'git-blob.dat')
+    blob_filename = os.path.join(ctx.tmpdir, git_blob_file)
 )
 
 ctx.revision_reader = None
@@ -103,7 +114,7 @@ global_symbol_strategy_rules = [
     HeuristicPreferredParentRule()
 ]
 
-ctx.username = 'cvs2git'
+ctx.username = temp_user_name
 
 ctx.file_property_setters.extend(
     [
@@ -125,17 +136,22 @@ ctx.cross_branch_commits = False
 ctx.keep_cvsignore = True
 ctx.retain_conflicting_attic_files = False
 
-author_transforms = {
-    'ymurshed' : 'Yaad Murshed <rifatyaad@gmail.com>',
-    
-    # This one will be used for commits for which CVS doesn't record the original author.
-    'cvs2git' : 'cvs2git <admin@example.com>',
-}
+#load author mapping from file
+author_transforms = {}
+with open(author_mapping_file) as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter = ',')
+    for row in csv_reader:
+        cvs_author = row[0].strip()
+        bitbucket_author = row[1].strip()
+
+        if cvs_author not in author_transforms:
+            author_transforms[cvs_author] = bitbucket_author
+            print(f'cvs author = {cvs_author} mapped to bitbucket author = {bitbucket_author}')
 
 # This is the main option that causes cvs2git to output to a "fastimport"-format dumpfile rather than to Subversion:
 ctx.output_option = GitOutputOption(
     GitRevisionMarkWriter(),
-    dump_filename = os.path.join(ctx.tmpdir, 'git-dump.dat'),
+    dump_filename = os.path.join(ctx.tmpdir, git_dump_file),
     author_transforms = author_transforms,
 )
 
