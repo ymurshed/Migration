@@ -57,7 +57,7 @@ ctx.cvs_author_decoder = CVSTextDecoder(
         #'latin1',
         #'ascii',
     ],
-    fallback_encoding='ascii'
+    fallback_encoding = 'utf8'
 )
     
 ctx.cvs_log_decoder = CVSTextDecoder(
@@ -66,7 +66,7 @@ ctx.cvs_log_decoder = CVSTextDecoder(
         #'latin1',
         #'ascii',
     ],
-    fallback_encoding='ascii',
+    fallback_encoding = 'utf8',
     eol_fix='\n'
 )
     
@@ -76,7 +76,7 @@ ctx.cvs_filename_decoder = CVSTextDecoder(
         #'latin1',
         #'ascii',
     ],
-    fallback_encoding='ascii'
+    fallback_encoding = 'utf8'
 )
 
 ctx.initial_project_commit_message = (
