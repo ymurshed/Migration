@@ -138,15 +138,14 @@ ctx.retain_conflicting_attic_files = False
 
 #load author mapping from file
 author_transforms = {}
-with open(author_mapping_file) as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter = ',')
-    for row in csv_reader:
-        cvs_author = row[0].strip()
-        bitbucket_author = row[1].strip()
+csv_reader = csv.reader(open(author_mapping_file, "rb")) 
+for row in csv_reader:
+    cvs_author = row[0].strip()
+    bitbucket_author = row[1].strip()
 
-        if cvs_author not in author_transforms:
-            author_transforms[cvs_author] = bitbucket_author
-            print(f'cvs author = {cvs_author} mapped to bitbucket author = {bitbucket_author}')
+    if cvs_author not in author_transforms:
+        author_transforms[cvs_author] = bitbucket_author
+        print(f'cvs author = {cvs_author} mapped to bitbucket author = {bitbucket_author}')
 
 # This is the main option that causes cvs2git to output to a "fastimport"-format dumpfile rather than to Subversion:
 ctx.output_option = GitOutputOption(
