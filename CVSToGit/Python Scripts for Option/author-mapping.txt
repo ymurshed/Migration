@@ -1,0 +1,2 @@
+ymurshed, Yaad Murshed <rifatyaad@gmail.com>
+cvs2git, cvs2git <admin@example.com>
