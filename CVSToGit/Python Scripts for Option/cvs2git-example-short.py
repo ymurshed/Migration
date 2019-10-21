@@ -40,7 +40,7 @@ from cvs2svn_lib.property_setters import KeywordsPropertySetter
 from cvs2svn_lib.property_setters import MimeMapper
 from cvs2svn_lib.property_setters import SVNBinaryFileKeywordsPropertySetter
 
-#constants
+# Constants
 temp_dir = r'cvs2git-tmp'
 temp_user_name = 'cvs2git'
 git_blob_file = 'git-blob.dat'
@@ -136,7 +136,8 @@ ctx.cross_branch_commits = False
 ctx.keep_cvsignore = True
 ctx.retain_conflicting_attic_files = False
 
-#load author mapping from file
+
+# Load author mapping from file
 author_transforms = {}
 csv_reader = csv.reader(open(author_mapping_file, "rb")) 
 for row in csv_reader:
@@ -146,6 +147,7 @@ for row in csv_reader:
     if cvs_author not in author_transforms:
         author_transforms[cvs_author] = bitbucket_author
         print(f'cvs author = {cvs_author} mapped to bitbucket author = {bitbucket_author}')
+
 
 # This is the main option that causes cvs2git to output to a "fastimport"-format dumpfile rather than to Subversion:
 ctx.output_option = GitOutputOption(
@@ -157,7 +159,7 @@ ctx.output_option = GitOutputOption(
 # Change this option to True to turn on profiling of cvs2git (for debugging purposes):
 run_options.profiling = False
 
-# single-project conversions, so this method must only be called once:
+# Single-project conversions, so this method must only be called once:
 run_options.set_project(
     r'D:\Work\cvsrepo\eresdev\eresdev',
 
