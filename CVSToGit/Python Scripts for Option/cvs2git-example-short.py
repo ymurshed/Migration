@@ -146,7 +146,7 @@ for row in csv_reader:
 
     if cvs_author not in author_transforms:
         author_transforms[cvs_author] = bitbucket_author
-        print(f'cvs author = {cvs_author} mapped to bitbucket author = {bitbucket_author}')
+        print ('cvs author = [' + cvs_author + '] mapped to bitbucket author = [' + bitbucket_author + ']')
 
 
 # This is the main option that causes cvs2git to output to a "fastimport"-format dumpfile rather than to Subversion:
