@@ -156,12 +156,13 @@ f.close()
 project_migrated = []
 f = open(project_to_be_migrated_file, "rb")
 line = f.readline()
-print('projects those will be migrated: \n')
+print('\nprojects those will be migrated: ')
 
 while line:
-    print(line)
-    project_migrated.append(line)
-    line = f.readline()
+	l = line.strip('\n')
+	print(l)
+	project_migrated.append(l)
+	line = f.readline()
 
 f.close()
 # ======================================================== End loading input files =======================================================
