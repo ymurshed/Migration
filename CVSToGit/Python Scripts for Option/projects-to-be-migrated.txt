@@ -1,0 +1,2 @@
+C:\test\SampleProject
+C:\test\AnotherProject

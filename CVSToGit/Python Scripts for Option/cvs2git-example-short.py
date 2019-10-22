@@ -46,7 +46,7 @@ temp_user_name = 'cvs2git'
 git_blob_file = 'git-blob.dat'
 git_dump_file = 'git-dump.dat'
 author_mapping_file = 'author-mapping.txt'
-project_mapping_file = 'project-mapping.txt' 
+project_to_be_migrated_file = 'projects-to-be-migrated.txt' 
 
 
 logger.log_level = logger.NORMAL
@@ -136,18 +136,35 @@ ctx.cross_branch_commits = False
 ctx.keep_cvsignore = True
 ctx.retain_conflicting_attic_files = False
 
-
+# ======================================================== Start loading input files =======================================================
 # Load author mapping from file
 author_transforms = {}
-csv_reader = csv.reader(open(author_mapping_file, "rb")) 
+f = open(author_mapping_file, "rb")
+csv_reader = csv.reader(f) 
+
 for row in csv_reader:
     cvs_author = row[0].strip()
     bitbucket_author = row[1].strip()
 
     if cvs_author not in author_transforms:
         author_transforms[cvs_author] = bitbucket_author
-        print ('cvs author = [' + cvs_author + '] mapped to bitbucket author = [' + bitbucket_author + ']')
+        print('cvs author = [' + cvs_author + '] mapped to bitbucket author = [' + bitbucket_author + ']')
 
+f.close()
+
+# Load project path those need to be migrated from file
+project_migrated = []
+f = open(project_to_be_migrated_file, "rb")
+line = f.readline()
+print('projects those will be migrated: \n')
+
+while line:
+    print(line)
+    project_migrated.append(line)
+    line = f.readline()
+
+f.close()
+# ======================================================== End loading input files =======================================================
 
 # This is the main option that causes cvs2git to output to a "fastimport"-format dumpfile rather than to Subversion:
 ctx.output_option = GitOutputOption(
