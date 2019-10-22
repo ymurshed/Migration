@@ -46,7 +46,7 @@ temp_user_name = 'cvs2git'
 git_blob_file = 'git-blob.dat'
 git_dump_file = 'git-dump.dat'
 author_mapping_file = 'author-mapping.txt'
-project_to_be_migrated_file = 'projects-to-be-migrated.txt' 
+project_path_file = 'project-path.txt' 
 
 
 logger.log_level = logger.NORMAL
@@ -153,16 +153,17 @@ for row in csv_reader:
 f.close()
 
 # Load project path those need to be migrated from file
-project_migrated = []
-f = open(project_to_be_migrated_file, "rb")
+project_migrated = ''
+f = open(project_path_file, "rb")
 line = f.readline()
-print('\nprojects those will be migrated: ')
 
 while line:
-	l = line.strip('\n')
-	print(l)
-	project_migrated.append(l)
-	line = f.readline()
+    l = line.strip('\n')
+    print('\nProject path: ' + l + '\n')
+    project_migrated = l
+    line = f.readline()
+    if len(l) > 0:
+        break
 
 f.close()
 # ======================================================== End loading input files =======================================================
@@ -179,12 +180,10 @@ run_options.profiling = False
 
 # Single-project conversions, so this method must only be called once:
 run_options.set_project(
-    r'D:\Work\cvsrepo\eresdev\eresdev',
-
+    project_migrated,
     symbol_transforms = [
         ReplaceSubstringsSymbolTransform('\\','/'),
         NormalizePathsSymbolTransform(),
     ],
-
     symbol_strategy_rules = global_symbol_strategy_rules
 )
