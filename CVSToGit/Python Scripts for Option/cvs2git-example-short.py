@@ -152,7 +152,7 @@ for row in csv_reader:
 
 f.close()
 
-# Load project path those need to be migrated from file
+# Load project path that need to be migrated from file
 project_migrated = ''
 f = open(project_path_file, "rb")
 line = f.readline()
